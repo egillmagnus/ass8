@@ -2,6 +2,21 @@
 import java.time.LocalDate;
 
 public class Lending {
+
+
+    LocalDate dueDate;
+
+
+
+    User user;
+
+    Book book;
+
+    public Lending(User user, Book book) {
+        dueDate = LocalDate.now().plusDays(30);
+        this.user = user;
+        this.book = book;
+    }
     public LocalDate getDueDate() {
         return dueDate;
     }
@@ -9,14 +24,18 @@ public class Lending {
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
+    public User getUser() {
+        return user;
+    }
 
-    LocalDate dueDate;
-    User user;
-    Book book;
-
-    public Lending(User user, Book book) {
-        dueDate = LocalDate.now().plusDays(30);
+    public void setUser(User user) {
         this.user = user;
+    }
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
         this.book = book;
     }
 

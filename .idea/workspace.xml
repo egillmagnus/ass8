@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c450ec9c-a48f-4dc8-819f-2c22f49e6c61" name="Changes" comment="First add">
+    <list default="true" id="c450ec9c-a48f-4dc8-819f-2c22f49e6c61" name="Changes" comment="Set user variable in User class to private">
+      <change afterPath="$PROJECT_DIR$/verkefni/src/LibrarySystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verkefni/src/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/verkefni/src/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verkefni/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/verkefni/src/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verkefni/src/EmptyAuthorListException.java" beforeDir="false" afterPath="$PROJECT_DIR$/verkefni/src/EmptyAuthorListException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verkefni/src/Lending.java" beforeDir="false" afterPath="$PROJECT_DIR$/verkefni/src/Lending.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verkefni/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/verkefni/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/verkefni/src/UserOrBookDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/verkefni/src/UserOrBookDoesNotExistException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +75,14 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Set user variable in User class to private">
+      <created>1678440426492</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678440426492</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,5 +95,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Set user variable in User class to private" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set user variable in User class to private" />
   </component>
 </project>
