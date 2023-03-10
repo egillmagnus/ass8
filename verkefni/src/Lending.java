@@ -1,15 +1,11 @@
+package verkefni.src;
 
 import java.time.LocalDate;
 
 public class Lending {
 
-
     LocalDate dueDate;
-
-
-
     User user;
-
     Book book;
 
     public Lending(User user, Book book) {
@@ -17,6 +13,7 @@ public class Lending {
         this.user = user;
         this.book = book;
     }
+
     public LocalDate getDueDate() {
         return dueDate;
     }
@@ -24,6 +21,7 @@ public class Lending {
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
+
     public User getUser() {
         return user;
     }
@@ -31,6 +29,7 @@ public class Lending {
     public void setUser(User user) {
         this.user = user;
     }
+
     public Book getBook() {
         return book;
     }
