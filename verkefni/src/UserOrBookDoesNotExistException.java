@@ -1,4 +1,4 @@
-package verkefni.src;
+
 
 public class UserOrBookDoesNotExistException extends Exception {
     private String message;

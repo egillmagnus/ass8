@@ -1,4 +1,3 @@
-package verkefni.src;
 
 import java.util.List;
 

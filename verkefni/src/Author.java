@@ -1,4 +1,3 @@
-package verkefni.src;
 
 public class Author {
 

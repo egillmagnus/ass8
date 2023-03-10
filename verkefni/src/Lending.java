@@ -1,4 +1,3 @@
-import verkefni.src.Book;
 
 import java.time.LocalDate;
 
