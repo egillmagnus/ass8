@@ -1,4 +1,7 @@
+import verkefni.src.Book;
+
 import java.time.LocalDate;
+
 public class Lending {
     public LocalDate getDueDate() {
         return dueDate;
