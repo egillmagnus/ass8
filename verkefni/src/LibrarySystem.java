@@ -1,72 +1,78 @@
 package verkefni.src;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LibrarySystem {
 
-    private Book book;
-    private LibrarySystem LibrarySystem;
-    private FacultyMember facultyMember;
-    private User user;
+    private List<Book> books;
+    private List<User> users;
+    private List<Lending> lendings;
 
     public LibrarySystem() {
-        LibrarySystem = new LibrarySystem();
+        this.books = new ArrayList<>();
+        this.users = new ArrayList<>();
+        this.lendings = new ArrayList<>();
     }
 
     public void addBookWithTitleAndAuthorlist(String title, List<Author> authors) throws EmptyAuthorListException {
-        book = new Book(title, authors);
+        books.add(new Book(title, authors));
     }
 
     public void addStudentUser(String name, boolean feePaid) {
         if (feePaid == true) {
-            user = new User(name);
+            users.add(new User(name));
         }
     }
 
     public void addFacultyMemberUser(String name, String department) {
-        facultyMember = new FacultyMember(name, department);
+        users.add(new FacultyMember(name, department));
     }
 
-    public void findBookByTitle(String title) throws UserOrBookDoesNotExistException {
-        if (book == null) {
-            throw new UserOrBookDoesNotExistException("The book does not exist");
+    public Book findBookByTitle(String title) throws UserOrBookDoesNotExistException {
+        for (Book book : books) {
+            if (book.getTitle().equals(title)) {
+                return book;
+            }
         }
-        if (book.getTitle().equals(title)) {
-            System.out.println("The book exists");
-        } else {
-            System.out.println("The book does not exist");
-        }
+        throw new UserOrBookDoesNotExistException("The book does not exist");
     }
 
     public User findUserByName(String name) throws UserOrBookDoesNotExistException {
-        if (user.getName().equals(name)) {
-            return user;
-        } else {
-            throw new UserOrBookDoesNotExistException("The user does not exist");
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getName().equals(name)) {
+                return users.get(i);
+            }
         }
+        throw new UserOrBookDoesNotExistException("The user does not exist");
     }
 
     public void borrowBook(User user, Book book) {
-        //use the lending class
+        Lending lending = new Lending(user, book);
+        lendings.add(lending);
     }
 
     public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate) throws UserOrBookDoesNotExistException {
-        if (book == null) {
-            throw new UserOrBookDoesNotExistException("The book does not exist");
+        boolean found = false;
+        for (int i = 0; i < lendings.size(); i++) {
+            if (lendings.get(i).getUser().getName().equals(facultyMember.getName()) && lendings.get(i).getBook().getTitle().equals(book.getTitle())) {
+                lendings.get(i).setDueDate(newDueDate);
+                found = true;
+            }
         }
-        if (facultyMember == null) {
-            throw new UserOrBookDoesNotExistException("The faculty member does not exist");
+        if (!found) {
+            throw new UserOrBookDoesNotExistException("The user does not exist");
         }
-        //use the lending class
-        if (book.getTitle().equals(facultyMember.getName())) {
-            System.out.println("The book exists");
 
-        }
     }
 
     public void returnBook(User user, Book book) throws UserOrBookDoesNotExistException {
-        
+        for (int i = 0; i < lendings.size(); i++) {
+            if (lendings.get(i).getUser().getName().equals(user.getName()) && lendings.get(i).getBook().getTitle().equals(book.getTitle())) {
+                lendings.remove(i);
+            }
+        }
     }
 
 }
