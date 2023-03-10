@@ -1,3 +1,5 @@
+package verkefni.src;
+
 public class FacultyMember extends User {
 
 
